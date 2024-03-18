@@ -7,7 +7,7 @@ body {
 
 p {
     margin: 10px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -34,6 +34,7 @@ button:active {
 }
 
 .languageSelectorButton {
+  z-index: 1;
   padding-top: 20px;
   border: none;
   background-color: black;
@@ -49,13 +50,17 @@ button:active {
 .showOptions {
   display: flex;
   justify-content: end;
-  position: relative;
+  position: absolute;
+  background-color: transparent;
+  margin: 21px 0 0 0;
+  height: fit-content;
+  width: 100%;
 }
 
 .showOptionsButton {
   z-index: 1;
   display: flex;
-  position: absolute;
+  position: relative;
   margin: 0px;
   padding: 0;
   font-size: 40px;
@@ -77,6 +82,30 @@ button:active {
   transition: font-size 100ms;
 }
 
+.darkModeDiv {
+  z-index: 1;
+  display: flex;
+  position: absolute;
+  justify-content: start;
+  margin: 0;
+  height: fit-content;
+  width: 100%;
+}
+
+.darkModeButton {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+}
+
 .select-menu {
   display: flex;
   position: relative;
@@ -91,7 +120,7 @@ button:active {
   height: fit-content;
   background-color: aquamarine;
   padding: 10px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   border-radius: 15px;
   align-items: center;
@@ -101,8 +130,10 @@ button:active {
 }
 
 .select-btn {
+  z-index: 1;
   position: relative;
   width: fit-content;
+  margin: 0 50px 0 50px;
 }
 
 .select-btn i {
@@ -293,7 +324,7 @@ max-width: 100% !important;
   height: fit-content;
   width: 100%;
   max-width: calc(100% - 30px);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .codeDisplay::-webkit-scrollbar {
@@ -371,29 +402,32 @@ max-width: 100% !important;
 #htmlExplanationCode {
   position: relative;
   display: block;
+  background-color: red;
 }
 
 #cssExplanationCode {
   position: relative;
   display: none;
+  background-color: white;
 }
 
 #javascriptExplanationCode {
   position: relative;
   display: none;
+  background-color: white;
 }
 
 #csExplanationCode {
   position: relative;
   display: none;
+  background-color: white;
 }
 
 #pythonExplanationCode {
   position: relative;
   display: none;
+  background-color: white;
 }
-
-
 
 
 

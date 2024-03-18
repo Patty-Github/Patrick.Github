@@ -8,26 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="showOptions">
-        <button class="showOptionsButton">III</button>
-    </div>
-
     <div id="codeLanguageSelector">
         <button class="languageSelectorButton" id="showHtmlButton">HTML</button>
         <button class="languageSelectorButton" id="showCssButton">CSS</button>
         <button class="languageSelectorButton" id="showJavascriptButton">JavaScript</button>
         <button class="languageSelectorButton" id="showCsButton">C#</button>
         <button class="languageSelectorButton" id="showPythonButton">Python</button>
+        <div class="showOptions">
+            <button class="showOptionsButton">III</button>
+        </div>
     </div>
 
     <div class="select-menu">
+        <div class="darkModeDiv">
+            <button id="darkModeButton" onclick="darkMode()">M</button>
+        </div>
         <div class="select-btn">
             <span class="sBtn-text">Select Project</span>
         </div>
     
         <ul class="options">
             <li class="option">
-                <span class="option-text">Code Explanation</span>
+                <span class="option-text">Code Explanationnnn</span>
             </li>
             <li class="option">
                 <span class="option-text">Different Site</span>
@@ -87,13 +89,12 @@
                 pythonButton.classList.add("active");
             }
         }
-
         document.addEventListener("DOMContentLoaded", checkForLanguage);
 
         //if window width is <770px, only show the active button and have a menu open button showing the other buttons top to bottom.
         const languageButtons = document.querySelectorAll(".languageSelectorButton")
         function buttonFormater() {
-            if(window.innerWidth < 770) {
+            if(window.innerWidth < 620) {
                 languageButtons.forEach((buttonV2) => {
                     if(buttonV2.classList.contains("active")) {
                         buttonV2.classList.add("showButton");
@@ -110,6 +111,17 @@
         }
         document.addEventListener("DOMContentLoaded", buttonFormater);
         window.addEventListener("resize", buttonFormater);
+
+        function showShowOptionsButton() {
+            const optionsButton = document.querySelector(".showOptionsButton");
+            if(window.innerWidth < 620) {
+                optionsButton.style.display = "block";
+            } else {
+                optionsButton.style.display = "none";
+            }
+        }
+        document.addEventListener("DOMContentLoaded", showShowOptionsButton);
+        window.addEventListener("resize", showShowOptionsButton);
 
 
         
@@ -129,6 +141,7 @@
         }
         document.addEventListener('DOMContentLoaded', addActiveToBothArea);
         window.addEventListener("resize", addActiveToBothArea);
+        window.addEventListener("click", addActiveToBothArea); //Don't know if this adds much lag, should make it only for the language buttons.
         
 
 
@@ -198,13 +211,32 @@
 
             console.log("Copied")
         }
+
+        const darkModeButton = document.getElementById("darkModeButton");
+        const elementsToDarken = document.querySelectorAll(".codeAreaLeftContainer, .codeAreaRightContainer .explanationAreaRightContainer, .explanationAreaLeftContainer")
+        function darkMode() {
+            darkModeButton.classList.toggle("dark");
+            if(darkModeButton.classList.contains("dark")) {
+                darkModeButton.style.backgroundColor = "black";
+                darkModeButton.style.color = "white";
+                elementsToDarken.forEach((elementsToDarkenn) => {
+                    elementsToDarkenn.style.backgroundColor = "black"
+                })
+            } else {
+                darkModeButton.style.backgroundColor = "white";
+                darkModeButton.style.color = "black";
+                elementsToDarken.forEach((elementsToDarkenn) => {
+                    elementsToDarkenn.style.backgroundColor = "red"
+                })
+            }
+        }
     </script>
 
     <script src="./importCodeProjects.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>
-    hljs.highlightAll();
-</script>
+    <script>
+        hljs.highlightAll();
+    </script>
 <!--To Do
 make dropdown start on code explanation
 make dropdown link link to different projects

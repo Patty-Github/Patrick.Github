@@ -1,0 +1,81 @@
+<!--HTML Explanation Code-->
+<div id="htmlExplanationCode">
+    <div class="bothAreaLR">
+        <div class="codeAreaLeftContainer">
+            <div class="codeAreaLeft" id="codeArea1">
+                <!--<textarea readonly class="textareaClass" id="textarea1">-->
+                    <pre class="codePreDisplay">
+                    <button class="copyText" onclick="copyToClipboard()">Copy</button>
+                        <code class="language-html codeDisplay hljs language-xml" id="copyThis" data-highlighted="yes">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;title&gt;Coding Explanation&lt;/title&gt;
+&lt;/head&gt;            </code>
+                    </pre>
+                <!--</textarea>-->
+            </div> 
+        </div>
+        <div class="explanationAreaRightContainer">
+            <div class="explanationAreaRight" id="explanationArea1">
+                <p>
+                    Starting off with &lt;!DOCTYPE html&gt;, this is used to tell the browser what document type to expect.
+                    <br>
+                    &lt;html lang="en"&gt; declares the language the code is written in to the browser.
+                    <br>
+                    the &lt;head&gt; element contains the metadata of the website and links to stylesheets and scripts. 
+                </p>
+            </div>
+        </div>
+    </div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <!--<div id="htmlExplanationCode">
+    <div class="bothAreaLR">
+        <div class="codeAreaLeftContainer">
+            <div class="codeAreaLeft" id="codeArea1">
+                    <pre class="codePreDisplay">
+                    <button class="copyText" onclick="copyToClipboard()">Copy</button>
+                        <code class="language-javascript codeDisplay" id="copyThis">
+class importJavascipt extends HTMLElement {
+    connectedCallback() {
+        fetch("./explanations/javascript-explanation.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch HTML content');
+            }
+            return response.text();
+        })
+        .then(javascriptContent => {
+            this.innerHTML = javascriptContent;
+        })
+        .catch(error => {
+            console.error('Error loading HTML content:', error);
+        });
+    }
+} 
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;title&gt;Coding Explanation&lt;/title&gt;
+&lt;/head&gt;                       </code>
+                    </pre>
+            </div> 
+        </div>
+        <div class="explanationAreaRightContainer">
+            <div class="explanationAreaRight" id="explanationArea1">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eius id autem at ratione deserunt molestiae laudantium ducimus nam excepturi amet nemo, cupiditate dignissimos sit error mollitia, laborum quos. Necessitatibus!
+                </p>
+            </div>
+        </div>
+    </div> 
+</div>-->

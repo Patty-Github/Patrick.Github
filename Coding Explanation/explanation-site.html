@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Explanation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="/PattyWebsite/Home/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav-bar></nav-bar>
+
+    <div class="sideLanguageSelectorDiv">
+        <div class="sideLanguageSelector">
+            <button class="sideLanguageSelectorButton">HTML</button>
+            <button class="sideLanguageSelectorButton">CSS</button>
+            <button class="sideLanguageSelectorButton">JavaScipt</button>
+            <button class="sideLanguageSelectorButton">C#</button>
+            <button class="sideLanguageSelectorButton">Python</button>
+        </div>
+    </div>
+
+    <div id="codeLanguageSelector">
+        <button class="languageSelectorButton" id="showHtmlButton">HTML</button>
+        <button class="languageSelectorButton" id="showCssButton">CSS</button>
+        <button class="languageSelectorButton" id="showJavascriptButton">JavaScript</button>
+        <button class="languageSelectorButton" id="showCsButton">C#</button>
+        <button class="languageSelectorButton" id="showPythonButton">Python</button>
+        <div class="showOptions">
+            <button class="showOptionsButton" onclick="showOptionsFunction()">III</button>
+        </div>
+    </div>
+
+    <div class="select-menu">
+        <div class="darkModeDiv">
+            <button id="darkModeButton" onclick="darkMode()">M</button>
+        </div>
+        <div class="select-btn">
+            <span class="sBtn-text">Select Project</span>
+        </div>
+    
+        <ul class="options">
+            <li class="option">
+                <span class="option-text">Code Explanationnnn</span>
+            </li>
+            <li class="option">
+                <span class="option-text">Different Site</span>
+            </li>
+            <li class="option">
+                <span class="option-text">Another Site</span>
+            </li>
+            <li class="option">
+                <span class="option-text">Seperate Site</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="target">
+
+    </div>
+
+    <html-explanation id="htmlExplanationCode"></html-explanation>
+
+    <css-explanation id="cssExplanationCode"></css-explanation>
+
+    <javascript-explanation id="javascriptExplanationCode"></javascript-explanation>
+
+    <csharp-explanation id="csExplanationCode"></csharp-explanation>
+
+    <python-explanation id="pythonExplanationCode"></python-explanation>
+
+    <script>
+        function printScreenWidth() {
+            console.log(window.innerWidth);
+        }
+        printScreenWidth();
+        window.addEventListener("resize", printScreenWidth)
+
+        const htmlButton = document.getElementById("showHtmlButton");
+        const cssButton = document.getElementById("showCssButton");
+        const javascriptButton = document.getElementById("showJavascriptButton");
+        const csButton = document.getElementById("showCsButton");
+        const pythonButton = document.getElementById("showPythonButton");
+
+        const htmlCodeDiv = document.getElementById("htmlExplanationCode");
+        const cssCodeDiv = document.getElementById("cssExplanationCode");
+        const javascriptCodeDiv = document.getElementById("javascriptExplanationCode");
+        const csCodeDiv = document.getElementById("csExplanationCode");
+        const pythonCodeDiv = document.getElementById("pythonExplanationCode");
+
+        function checkForLanguage() {
+            if (htmlCodeDiv.style.display = "block") {
+                htmlButton.classList.add("active");
+            } else if (cssCodeDiv.style.display = "block") {
+                cssButton.classList.add("active");
+            } else if (javascriptCodeDiv.style.display = "block") {
+                javascriptButton.classList.add("active");
+            } else if (csCodeDiv.style.display = "block") {
+                csButton.classList.add("active");
+            } else if (pythonCodeDiv.style.display = "block") {
+                pythonButton.classList.add("active");
+            }
+        }
+        document.addEventListener("DOMContentLoaded", checkForLanguage);
+
+        //if window width is <770px, only show the active button and have a menu open button showing the other buttons top to bottom.
+        const languageButtons = document.querySelectorAll(".languageSelectorButton")
+        function buttonFormater() {
+            if(window.innerWidth < 620) {
+                languageButtons.forEach((buttonV2) => {
+                    if(buttonV2.classList.contains("active")) {
+                        buttonV2.classList.add("showButton");
+                    } else {
+                        buttonV2.style.display = "none";
+                    }
+                })
+            } else {
+                languageButtons.forEach((buttonV2) => {
+                    buttonV2.classList.remove("showButton");
+                    buttonV2.style.display = "block";
+                })
+            }
+        }
+        document.addEventListener("DOMContentLoaded", buttonFormater);
+        window.addEventListener("resize", buttonFormater);
+
+        const optionsButton = document.querySelector(".showOptionsButton");
+        function showShowOptionsButton() {
+            if(window.innerWidth < 620) {
+                optionsButton.style.display = "block";
+            } else {
+                optionsButton.style.display = "none";
+            }
+        }
+        document.addEventListener("DOMContentLoaded", showShowOptionsButton);
+        window.addEventListener("resize", showShowOptionsButton);
+
+
+        
+        //if window width is <1070px then add active class 
+        function addActiveToBothArea() {
+            const bothArea = document.querySelectorAll(".bothAreaLR, .bothAreaRL, .codeAreaLeftContainer, .codeAreaRightContainer, .explanationAreaRightContainer, .explanationAreaLeftContainer");
+            if(window.innerWidth < 1070) {
+                bothArea.forEach((bothAreaa) => {
+                    bothAreaa.classList.add("active");
+                })
+                console.log("Screen Width Is Less Than 1070px");
+            } else {
+                bothArea.forEach((bothAreaa) => {
+                    bothAreaa.classList.remove("active"); 
+                })
+            }
+        }
+        document.addEventListener('DOMContentLoaded', addActiveToBothArea);
+        window.addEventListener("resize", addActiveToBothArea);
+        window.addEventListener("click", addActiveToBothArea); //Don't know if this adds much lag, should make it only for the language buttons.
+        
+
+
+        const sideLanguageSelectorArea = document.querySelectorAll(".sideLanguageSelectorDiv")
+        const sideLanguageSelectorButtons = document.querySelectorAll(".sideLanguageSelectorButton")
+        function showOptionsFunction() {
+            sideLanguageSelectorArea.forEach((sideLanguageSelectorAreaDiv) => {
+                sideLanguageSelectorAreaDiv.style.display = "flex";
+            })
+        }
+        function isShowOptionsClicked(event) {
+            let target = event.target;
+            if(target === sideLanguageSelectorButtons) {
+                return;
+            }
+            sideLanguageSelectorArea.forEach((sideLanguageSelectorAreaDiv) => {
+                sideLanguageSelectorAreaDiv.style.display = "none";
+            })
+            console.log("Clicked Off Show Options Button")
+        }
+        document.addEventListener("click", isShowOptionsClicked);
+
+
+
+        const buttons = ["Html", "Css", "Javascript", "Cs", "Python"];
+        const codeDivs = buttons.map(button => document.getElementById(`show${button}Button`));
+        const explanationCodeDivs = buttons.map(button => document.getElementById(`${button.toLowerCase()}ExplanationCode`)); 
+
+        buttons.forEach((button, index) => {
+            codeDivs[index].onclick = function() {
+                explanationCodeDivs.forEach((div, i) => {
+                    div.style.display = i === index ? "block" : "none";
+                });
+                codeDivs.forEach((btn, i) => {
+                    btn.classList.toggle("active", i === index);
+                });
+            }
+        });
+
+
+        //Dropdown Menu
+        const optionMenu = document.querySelector(".select-menu"),
+        selectBtn = optionMenu.querySelector(".select-btn"),
+        options = optionMenu.querySelectorAll(".option"),
+        sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+        selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                let selectedOption = option.querySelector(".option-text").innerText;
+                sBtn_text.innerText = selectedOption;
+                
+                optionMenu.classList.remove("active");
+            })
+        })
+
+        function isSelectorClicked(event) {
+            let target = event.target;
+            if(target === selectBtn || selectBtn.contains(target)) {
+                return;
+            }
+            optionMenu.classList.remove("active");
+            console.log("Clicked Off Button")
+        }
+        document.addEventListener("click", isSelectorClicked);
+
+
+        //Copy code to clipboard
+        const copyTextButton = document.querySelector(".copyText");
+        function copyToClipboard() {
+            //let textToCopy = document.querySelector(".codeDisplay")
+            let codeText = document.getElementById("copyThis");
+            textToCopy = codeText.textContent || codeText.innerText;
+
+            var textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(textarea);
+
+            console.log("Copied")
+        }
+
+        const darkModeButton = document.getElementById("darkModeButton");
+        const elementsToDarken = document.querySelectorAll(".codeAreaLeftContainer, .codeAreaRightContainer .explanationAreaRightContainer, .explanationAreaLeftContainer")
+        function darkMode() {
+            darkModeButton.classList.toggle("dark");
+            if(darkModeButton.classList.contains("dark")) {
+                darkModeButton.style.backgroundColor = "black";
+                darkModeButton.style.color = "white";
+                elementsToDarken.forEach((elementsToDarkenn) => {
+                    elementsToDarkenn.style.backgroundColor = "black"
+                })
+            } else {
+                darkModeButton.style.backgroundColor = "white";
+                darkModeButton.style.color = "black";
+                elementsToDarken.forEach((elementsToDarkenn) => {
+                    elementsToDarkenn.style.backgroundColor = "red"
+                })
+            }
+        }
+    </script>
+
+    <script src="/PattyWebsite/Home/import-navbar.js"></script>
+    <script src="./importCodeProjects.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+<!--To Do
+make dropdown start on code explanation
+make dropdown link link to different projects
+create dark mode
+optimise make button start on current language
+make grab grab while moving (scrollbar on code area)
+
+
+
+
+
+
+BIN
+
+
+OLD
+        //Make textarea height of scrollbar
+        const codeAreaJS1 = document.getElementById("codeArea1");
+        const textareaJS1 = document.getElementById("textarea1");
+        const explanationAreaJS1 = document.getElementById("explanationArea1")
+
+        updateTextareaHeight(textareaJS1);
+
+        function updateTextareaHeight(textareaJS1) {
+            textareaJS1.style.height = textareaJS1.scrollHeight + 13 + "px";
+        }
+
+        const codeAreaJS2 = document.getElementById("codeArea2");
+        const textareaJS2 = document.getElementById("textarea2");
+        const explanationAreaJS2 = document.getElementById("explanationArea2")
+
+        updateTextareaHeight(textareaJS2);
+
+        function updateTextareaHeight(textareaJS2) {
+            textareaJS2.style.height = textareaJS2.scrollHeight + 13 + "px";
+        }
+
+
+        //Get button IDs
+        const htmlButton = document.getElementById("showHtmlButton");
+        const cssButton = document.getElementById("showCssButton");
+        const javascriptButton = document.getElementById("showJavascriptButton");
+        const csButton = document.getElementById("showCsButton");
+        const pythonButton = document.getElementById("showPythonButton");
+
+        //Make code area height of scrollbar
+        //Get Div IDs
+        const htmlCodeDiv = document.getElementById("htmlExplanationCode");
+        const cssCodeDiv = document.getElementById("cssExplanationCode");
+        const javascriptCodeDiv = document.getElementById("javascriptExplanationCode");
+        const csCodeDiv = document.getElementById("csExplanationCode");
+        const pythonCodeDiv = document.getElementById("pythonExplanationCode");
+
+        //When button is clicked, hide and show divs.
+        //HTML
+        htmlButton.onclick = function() {
+            htmlCodeDiv.style.display = "block";
+            htmlButton.classList.add("active");
+
+            cssCodeDiv.style.display = "none";
+            cssButton.classList.remove("active");
+            javascriptCodeDiv.style.display = "none";
+            javascriptButton.classList.remove("active");
+            csCodeDiv.style.display = "none";
+            csButton.classList.remove("active");
+            pythonCodeDiv.style.display = "none";
+            pythonButton.classList.remove("active");
+        }
+        //CSS
+        cssButton.onclick = function() {
+            cssCodeDiv.style.display = "block";
+            cssButton.classList.add("active");
+
+            htmlCodeDiv.style.display = "none";
+            htmlButton.classList.remove("active");
+            javascriptCodeDiv.style.display = "none";
+            javascriptButton.classList.remove("active");
+            csCodeDiv.style.display = "none";
+            csButton.classList.remove("active");
+            pythonCodeDiv.style.display = "none";
+            pythonButton.classList.remove("active");
+        }
+        //JavaScript
+        javascriptButton.onclick = function() {
+            javascriptCodeDiv.style.display = "block";
+            javascriptButton.classList.add("active");
+
+            htmlCodeDiv.style.display = "none";
+            htmlButton.classList.remove("active");
+            cssCodeDiv.style.display = "none";
+            cssButton.classList.remove("active");
+            csCodeDiv.style.display = "none";
+            csButton.classList.remove("active");
+            pythonCodeDiv.style.display = "none";
+            pythonButton.classList.remove("active");
+        }
+        //C#
+        csButton.onclick = function() {
+            csCodeDiv.style.display = "block";
+            csButton.classList.add("active");
+
+            htmlCodeDiv.style.display = "none";
+            htmlButton.classList.remove("active");
+            javascriptCodeDiv.style.display = "none";
+            javascriptButton.classList.remove("active");
+            cssCodeDiv.style.display = "none";
+            cssButton.classList.remove("active");
+            pythonCodeDiv.style.display = "none";
+            pythonButton.classList.remove("active");
+        }
+        //Python
+        pythonButton.onclick = function() {
+            pythonCodeDiv.style.display = "block";
+            pythonButton.classList.add("active");
+
+            htmlCodeDiv.style.display = "none";
+            htmlButton.classList.remove("active");
+            javascriptCodeDiv.style.display = "none";
+            javascriptButton.classList.remove("active");
+            cssCodeDiv.style.display = "none";
+            cssButton.classList.remove("active");
+            csCodeDiv.style.display = "none";
+            csButton.classList.remove("active");
+        }
+-->
+</body>
+</html>

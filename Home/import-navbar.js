@@ -5,7 +5,7 @@ class ImportNavbar extends HTMLElement {
         <p class="navText">Patty-Github</p>
         <nav>
             <ul class="navLinks">
-                <li><a href="/PattyWebsite/Coding Explanation/explanation-site.html">Code Projects</a></li>
+                <li><a href="Patty-Github/explanation-site.html">Code Projects</a></li>
                 <li><a href="#">3D Models</a></li>
                 <li><a href="#">About</a></li>
             </ul>

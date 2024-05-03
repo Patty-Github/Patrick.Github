@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: none;
+}
+
+.pageTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 20px 0;
+    font-size: 2.2rem;
+    width: 100%;
+    height: fit-content;
+    color: white;
+}
+
+.pageTitleText {
+    background-color: rgb(50, 50, 50);
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+}
+
+.codeProjectArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.codeProjectContainer {
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 17vw 17vw 17vw;
+    grid-template-rows: 17vw 17vw 17vw;
+    padding: 30px;
+}
+
+.codeProject {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1.3rem;
+    background-image: linear-gradient(to bottom right, rgb(246,210,98), rgb(239,167,64));
+}
+
+.projectTitle {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: calc(30rem / 16);
+    font-weight: 600;
+    padding: 10px 0 10px 0;
+    border-radius: 1.3rem 1.3rem 0 0;
+}
+
+.projectP {
+    margin: 0 18px 0 18px;
+    color: white;
+}
+
+a.projectP {
+    color: rgb(224, 255, 254);
+}
+
+.projectDescription {
+    margin: 0 50px 0 50px;
+    font-size: calc(16rem / 16);
+    font-weight: 500;
+}
+
+.projectImage {
+    position: absolute;
+    display: flex;
+    height: 27.1rem;
+    width: 27.1rem;
+    border-radius: 1.3rem;
+}
+
+.projectLinks {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 0 0 1.3rem 1.3rem;
+}
+
+.githubLink, .websiteLink {
+    margin: 0.4rem;
+}
+
+.projectLinksImage {
+    height: 2.5rem;
+}

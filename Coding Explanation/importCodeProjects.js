@@ -87,31 +87,6 @@ class importCss extends HTMLElement {
     }
 }
 
-/*class importJavascipt extends HTMLElement {
-    connectedCallback() {
-        fetch("./explanations/javascript-explanation.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch HTML content');
-            }
-            return response.text();
-        })
-        .then(javascriptContent => {
-            // Wrap the fetched content with <pre><code> tags
-            const codeElement = document.createElement('code');
-            codeElement.textContent = javascriptContent.trim();
-            const preElement = document.createElement('pre');
-            preElement.appendChild(codeElement);
-            this.appendChild(preElement);
-            // Initialize Highlight.js on the newly added code element
-            hljs.highlightBlock(codeElement);
-        })
-        .catch(error => {
-            console.error('Error loading HTML content:', error);
-        });
-    }
-}*/
-
 class importJavascipt extends HTMLElement {
     connectedCallback() {
         fetch("./explanations/javascript-explanation.html")
@@ -149,3 +124,32 @@ customElements.define("css-explanation", importCss);
 customElements.define("javascript-explanation", importJavascipt);
 customElements.define("csharp-explanation", importCsharp);
 customElements.define("python-explanation", importPython);
+
+
+
+/* BIN 
+class importJavascipt extends HTMLElement {
+    connectedCallback() {
+        fetch("./explanations/javascript-explanation.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch HTML content');
+            }
+            return response.text();
+        })
+        .then(javascriptContent => {
+            // Wrap the fetched content with <pre><code> tags
+            const codeElement = document.createElement('code');
+            codeElement.textContent = javascriptContent.trim();
+            const preElement = document.createElement('pre');
+            preElement.appendChild(codeElement);
+            this.appendChild(preElement);
+            // Initialize Highlight.js on the newly added code element
+            hljs.highlightBlock(codeElement);
+        })
+        .catch(error => {
+            console.error('Error loading HTML content:', error);
+        });
+    }
+}
+*/

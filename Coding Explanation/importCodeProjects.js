@@ -133,7 +133,7 @@ xHttpOP.onload = function(){
     document.querySelector(".javascriptTest").innerHTML = this.responseText;
 }
 
-xHttpOP.open('GET', 'javascript-explanation.html');
+xHttpOP.open('GET', '/Patty-Github/Coding Explanation/explanations/javascript-explanation.html');
 xHttpOP.send();
 
 

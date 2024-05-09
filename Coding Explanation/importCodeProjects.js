@@ -127,6 +127,16 @@ customElements.define("python-explanation", importPython);
 
 
 
+xHttpOP = new XMLHttpRequest()
+
+xHttpOP.onload = function(){
+    document.querySelector(".javascriptTest").innerHTML = this.responseText;
+}
+
+xHttpOP.open('GET', 'javascript-explanation.html');
+xHttpOP.send();
+
+
 /* BIN 
 class importJavascipt extends HTMLElement {
     connectedCallback() {

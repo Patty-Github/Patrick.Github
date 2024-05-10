@@ -1,4 +1,14 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="/Patty-Github/Home/navbar.css">
+    <link rel="stylesheet" href="explanation-site.css">
+    <title>Document</title>
+</head>
+<body>
     <!--HTML Explanation Code-->
 <div id="javascriptExplanationCode">
     <div class="bothAreaLR">
@@ -6,7 +16,7 @@
             <div class="codeAreaLeft" id="codeArea1">
                 <pre class="codePreDisplay">
                     <button class="copyText" onclick="copyToClipboard()">Copy</button>
-                    <code class="language-javascript codeDisplay hljs">class importJavascipt extends HTMLElement {
+                    <code class="language-javascript codeDisplay hljs" id="copyThis">class importJavascipt extends HTMLElement {
 connectedCallback() {
     fetch("./explanations/javascript-explanation.html")
     .then(response => {
@@ -38,3 +48,10 @@ connectedCallback() {
             </div>
         </div>
     </div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

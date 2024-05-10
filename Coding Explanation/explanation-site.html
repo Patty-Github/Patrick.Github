@@ -24,7 +24,7 @@
     <div id="codeLanguageSelector">
         <button class="languageSelectorButton" id="showHtmlButton">HTML</button>
         <button class="languageSelectorButton" id="showCssButton">CSS</button>
-        <button class="languageSelectorButton" id="showJavascriptButton">JavaScript</button>
+        <button class="languageSelectorButton" id="showJavascriptButton" onclick="loadJavascriptCode()">JavaScript</button>
         <button class="languageSelectorButton" id="showCsButton">C#</button>
         <button class="languageSelectorButton" id="showPythonButton">Python</button>
         <div class="showOptions">
@@ -57,13 +57,17 @@
 
     </div>
 
-    <html-explanation id="htmlExplanationCode"></html-explanation>
+    <object type="text/html" data="javascript-explanation.html" id="javascriptExplanationCode"></object>
 
-    <div class="javascriptTest"></div>
+    <html-explanation id="htmlExplanationCode"></html-explanation>
 
     <css-explanation id="cssExplanationCode"></css-explanation>
 
     <javascript-explanation id="javascriptExplanationCode"></javascript-explanation>
+
+    <!--<button onclick="loadJavascriptCode()";>press</button>
+    <button onclick="highlightHLJS()">highlioght</button>
+    <div class="target language-javascript"></div>-->
 
     <csharp-explanation id="csExplanationCode"></csharp-explanation>
 

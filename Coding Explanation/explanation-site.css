@@ -468,6 +468,8 @@ button {
   position: relative;
   display: block;
   background-color: transparent;
+  height: 500px;
+  width: 100%;
 }
 
 #csExplanationCode {

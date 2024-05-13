@@ -5,6 +5,7 @@
 
 body {
     background-image: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -58,7 +59,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 40px;
-    background-image: linear-gradient(to bottom right, rgb(246,210,98), rgb(239,167,64));
+    /*background-image: linear-gradient(to bottom right, rgb(246,210,98), rgb(239,167,64));*/
+    background-image: linear-gradient(to bottom right, rgb(98, 236, 246), rgb(64, 125, 239));
     box-shadow: 0 0 10px 1px rgb(202, 202, 202);
 }
 

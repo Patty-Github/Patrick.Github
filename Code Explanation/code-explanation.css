@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#languageButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+
+#showHtmlButton, #showCssButton, #showJavascriptButton, #showCsharpButton, #showPythonButton {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    padding: 0 10px 2px 10px;
+    border-radius: 0 0 12px 12px;
+    background-color: rgb(26, 26, 26);
+}
+
+#showHtmlButton a, #showCssButton a, #showJavascriptButton a, #showCsharpButton a, #showPythonButton a {
+    font-size: 30px;
+    color: white;
+}

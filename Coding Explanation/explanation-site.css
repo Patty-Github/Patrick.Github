@@ -460,29 +460,29 @@ button {
 
 #cssExplanationCode {
   position: relative;
-  display: none;
-  background-color: white;
+  display: block;
+  background-color: transparent;
 }
 
 #javascriptExplanationCode {
   position: relative;
-  display: none;
-  background-color: white;
+  display: block;
+  background-color: transparent;
+  height: 500px;
+  width: 100%;
 }
 
 #csExplanationCode {
   position: relative;
-  display: none;
-  background-color: white;
+  display: block;
+  background-color: transparent;
 }
 
 #pythonExplanationCode {
   position: relative;
-  display: none;
-  background-color: white;
+  display: block;
+  background-color: transparent;
 }
-
-
 
 
 

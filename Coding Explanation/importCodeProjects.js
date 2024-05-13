@@ -125,7 +125,40 @@ customElements.define("javascript-explanation", importJavascipt);
 customElements.define("csharp-explanation", importCsharp);
 customElements.define("python-explanation", importPython);
 
+/*const targetEl = document.querySelector('.target');
 
+const loadJavascriptCode = number => {
+    fetch(`./explanations/javascript-explanation.html`)
+    .then(res => {
+        if (res.ok) {
+            return res.text();
+        }
+    })
+    .then(htmlSnippet => {
+        targetEl.innerHTML = htmlSnippet;
+    })
+    hljs.highlightBlock(targetEl);
+    hljs.highlightAll();
+}
+
+function highlightHLJS() {
+    hljs.highlightAll();
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });*/
+
+/*xHttpOP = new XMLHttpRequest()
+
+xHttpOP.onload = function(){
+    document.querySelector(".javascriptTest").innerHTML = this.responseText;
+}
+
+xHttpOP.open('GET', 'javascript-explanation.html');
+xHttpOP.send();*/
 
 /* BIN 
 class importJavascipt extends HTMLElement {

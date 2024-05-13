@@ -15,7 +15,7 @@
     }
 }*/
 
-class ImportNavbar extends HTMLElement {
+/*class ImportNavbar extends HTMLElement {
     connectedCallback() {
         fetch("/Patty-Github/Home/navbar.html")
         .then(response => {
@@ -30,6 +30,18 @@ class ImportNavbar extends HTMLElement {
         .catch(error => {
             console.error('Error loading HTML content:', error);
         });
+    }
+}*/
+
+class ImportNavbar extends HTMLElement {
+    connectedCallback() {
+        fetch("/Patty-Github/Home/navbar.html")
+        .then(response => {
+            return response.text();
+        })
+        .then(navbarContent => {
+            this.innerHTML = navbarContent;
+        })
     }
 }
 

@@ -3,6 +3,14 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+p {
+    margin: 0;
+}
+
+object {
+    overflow: auto !important;
+    overflow-clip-margin: 0px !important;
+}
 
 #languageButtons {
     display: flex;
@@ -25,4 +33,126 @@ body {
 #showHtmlButton a, #showCssButton a, #showJavascriptButton a, #showCsharpButton a, #showPythonButton a {
     font-size: 30px;
     color: white;
+}
+
+#showHtmlButton a:focus {
+    background-color: red;
+}
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.dropdownButton {
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgb(0, 151, 222);
+    border-radius: 15px;
+    font-size: 35px;
+}
+
+.dropdownProjects {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 170px;
+    font-size: 25px;
+    list-style: none;
+    border-radius: 15px;
+    background-color: rgb(0, 151, 222);
+    opacity: 0;
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    cursor: pointer;
+    border: solid;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 15px;
+    border-color: transparent;
+}
+
+.project:hover {
+    border-color: black;
+}
+
+.dropdownButton:focus + .dropdownProjects {
+    opacity: 1;
+}
+
+.explanationObject {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+}
+
+.bothArea {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+}
+
+.codeArea {
+    display: flex;
+    height: fit-content;
+    width: 50%;
+    background-color: gray;
+}
+
+.codeContainer {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    background-color: rgb(127, 189, 224);
+}
+
+.codePre {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 15px;
+    padding: 0;
+}
+
+.codeCode {
+    background-color: black;
+    border-radius: 15px;
+    width: calc(100% - 30px);
+}
+
+.explanationArea {
+    padding: 10px 10px 10px 10px;
+    width: 50%;
+}
+
+pre code.hljs {
+    padding: 0 10px 0 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .bothArea {
+        flex-direction: column;
+    }
+
+    .codeArea {
+        width: 100%;
+    }
+
+    .explanationArea {
+        width: 100%;
+    }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <link rel="stylesheet" href="/Patty-Github/Home/navbar.css">
     <link rel="stylesheet" href="/Patty-Github/Code Explanation/code-explanation.css">
     <title>Code Explanation</title>
@@ -18,41 +19,35 @@
         <div id="showPythonButton"><a href="#python">Python</a></div>
     </div>
 
+    <button id="test" onclick="testing()">Test</button>
+
     <div class="dropdownContainer">
-        <div class="dropdownButton">
-            <span class="dropdownButtonText">Select Project</span>
+        <div class="dropdownButton" tabindex="0">
+            <span class="dropdownButtonText"><p>Select Project</p></span>
         </div>
 
         <ul class="dropdownProjects">
-            <li class="project">
-                <span class="projectText">Personal Website</span>
+            <li class="project" onclick="testing()">
+                <span class="projectText"><p>This Website</p></span>
             </li>
 
-            <li class="project">
-                <span class="projectText">BlackJack</span>
+            <li class="project" onclick="testing()">
+                <span class="projectText"><p>BlackJack</p></span>
             </li>
         </ul>
     </div>
-
-    <!--<div class="select-menu">
-        <div class="select-btn">
-            <span class="sBtn-text">Select Project</span>
-        </div>
-    
-        <ul class="options">
-            <li class="option">
-                <span class="option-text">Home Page</span>
-            </li>
-            <li class="option">
-                <span class="option-text">Explanation Site</span>
-            </li>
-            <li class="option">
-                <span class="option-text">BlackJack</span>
-            </li>
-        </ul>
-    </div>-->
+    <object data="/Patty-Github/Code Explanation/explanations/placeholder/explanation-select.html" class="explanationObject" id="placeholder-html" onload="resizeObjects()"></object>
+    <!--Home Explanation-->
+    <object data="/Patty-Github/Code Explanation/explanations/javascript/home-javascript.html" class="explanationObject" id="home-javascript" onload="resizeObjects()"></object>
 
     <script src="/Patty-Github/Home/import-navbar.js"></script>
     <script src="/Patty-Github/Code Explanation/code-explanation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!--
+        add functionality to dropdown
+        create mobile layout
+    -->
 </body>
 </html>

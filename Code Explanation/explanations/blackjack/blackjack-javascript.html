@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="/Patty-Github/Code Explanation/code-explanation.css">
+</head>
+<div class="bothArea">
+    <div class="codeArea">
+        <div class="codeContainer">
+            <pre class="codePre">
+                <code class="codeCode language-javascript">
+function Hit() {
+    let cardDeal = Math.floor(Math.random() * 52);
+    console.log(cardDeal);
+    cards.forEach((cardShow) => {
+        if(cardShow.classList.contains(cardDeal) && !cardsDealt.includes(cardDeal)) {
+            cardShow.style.display = "block";
+            playerAreaDiv.append(cards[cardDeal]);
+            cardsDealt.push(cardDeal);
+        } else if(cardShow.classList.contains(cardDeal) && cardsDealt.includes(cardDeal)) {
+            Hit();
+            return;
+        }
+    })
+    playerTotalNumber = 0;
+    dealerTotalNumber = 0;
+    playerTotal();
+    aceIsOne()
+
+    if(playerTotalNumber >21) {
+        hitButton.disabled = true;
+        stand();
+        outcome();
+    }
+    
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+    <div class="explanationArea">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, doloribus? Blanditiis tenetur rem recusandae asperiores repellendus, eius cumque ipsam sint exercitationem pariatur ipsa, earum quo beatae a impedit architecto dolor?</p>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>

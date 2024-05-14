@@ -1,14 +1,19 @@
 console.log("Js working");
 
+//Language Selector 
+
+
 //Resize Object using Scroll Height
 const explanationObjects = document.querySelectorAll(".explanationObject");
 function resizeObjects() {
-    explanationObjects.forEach((explanationObject) => {
+    setTimeout(() => {
+        explanationObjects.forEach((explanationObject) => {
         let objectDocument = explanationObject.contentDocument;
         let objectHeight = objectDocument.body.scrollHeight;
         let objectHeightPlus = objectHeight + 20;
         explanationObject.style.height = objectHeightPlus + "px";
-    })
+        });
+    }, 1);
 }
 
 //Dropdown
@@ -21,30 +26,49 @@ projects.forEach((project) => {
     })
 })
 
-//If dropdown text is this website then show javascript-home
+//Show Selected
 const placeholderHTML = document.getElementById("placeholder-html");
+
 const homeJavascript = document.getElementById("home-javascript");
 
-function testing() {
+const blackjackJavascript = document.getElementById("blackjack-javascript");
+
+function showPlaceholderOnLaunch() {
+    if(dropdownButtonText.innerHTML = "Select Project") {
+        explanationObjects.forEach((explanationObject) => {
+            explanationObject.style.display = "none";
+            placeholderHTML.style.display = "block";
+            console.log("Select Project is selected");
+        })
+    }
+}
+
+function showSelectedProject() {
     setTimeout(() => {
         switch (dropdownButtonText.innerHTML) {
-            case dropdownButtonText.innerHTML = "Select Project":
+            case "Select Project":
                 explanationObjects.forEach((explanationObject) => {
                     explanationObject.style.display = "none";
                 })
-                placeholderHTML.style.display = block;
+                placeholderHTML.style.display = "block";
                 console.log("Select Project is selected");
                 break;
-            case dropdownButtonText.innerHTML = "This Website":
+            case "This Website":
                 explanationObjects.forEach((explanationObject) => {
                     explanationObject.style.display = "none";
                 })
                 homeJavascript.style.display = "block";
                 console.log("This Website is selected");
                 break;
-            case dropdownButtonText.innerHTML = "BlackJack":
+            case "BlackJack":
+                explanationObjects.forEach((explanationObject) => {
+                    explanationObject.style.display = "none";
+                })
+                blackjackJavascript.style.display = "block";
                 console.log("BlackJack is selected");
                 break;
         }
     }, 1);
 }
+document.addEventListener("DOMContentLoaded", showPlaceholderOnLaunch())
+document.addEventListener("DOMContentLoaded", resizeObjects());

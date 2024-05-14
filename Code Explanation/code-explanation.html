@@ -12,14 +12,14 @@
     <nav-bar></nav-bar>
 
     <div id="languageButtons">
-        <div id="showHtmlButton"><a href="#html">HTML</a></div>
-        <div id="showCssButton"><a href="#css">CSS</a></div>
-        <div id="showJavascriptButton"><a href="#javascript">JavaScript</a></div>
-        <div id="showCsharpButton"><a href="#csharp">C#</a></div>
-        <div id="showPythonButton"><a href="#python">Python</a></div>
+        <div class="languageButton" onclick="languageButtonFunction();" id="showHtmlButton"><a href="#html">HTML</a></div>
+        <div class="languageButton" onclick="languageButtonFunction();" id="showCssButton"><a href="#css">CSS</a></div>
+        <div class="languageButton" onclick="languageButtonFunction();" id="showJavascriptButton"><a href="#javascript">JavaScript</a></div>
+        <div class="languageButton" onclick="languageButtonFunction();" id="showCsharpButton"><a href="#csharp">C#</a></div>
+        <div class="languageButton" onclick="languageButtonFunction();" id="showPythonButton"><a href="#python">Python</a></div>
     </div>
 
-    <button id="test" onclick="testing()">Test</button>
+    <!--<button id="test" onclick="testing()">Test</button>-->
 
     <div class="dropdownContainer">
         <div class="dropdownButton" tabindex="0">
@@ -27,18 +27,21 @@
         </div>
 
         <ul class="dropdownProjects">
-            <li class="project" onclick="testing()">
+            <li class="project" onclick="showSelectedProject(); resizeObjects();">
                 <span class="projectText"><p>This Website</p></span>
             </li>
 
-            <li class="project" onclick="testing()">
+            <li class="project" onclick="showSelectedProject(); resizeObjects();">
                 <span class="projectText"><p>BlackJack</p></span>
             </li>
         </ul>
     </div>
-    <object data="/Patty-Github/Code Explanation/explanations/placeholder/explanation-select.html" class="explanationObject" id="placeholder-html" onload="resizeObjects()"></object>
+    <object data="/Patty-Github/Code Explanation/explanations/zzplaceholder/explanation-select.html" class="explanationObject" id="placeholder-html"></object>
     <!--Home Explanation-->
-    <object data="/Patty-Github/Code Explanation/explanations/javascript/home-javascript.html" class="explanationObject" id="home-javascript" onload="resizeObjects()"></object>
+    <object data="/Patty-Github/Code Explanation/explanations/home-explanation/home-javascript.html" class="explanationObject" id="home-javascript"></object>
+
+    <!--BlackJack Explanation-->
+    <object data="/Patty-Github/Code Explanation/explanations/blackjack/blackjack-javascript.html" class="explanationObject" id="blackjack-javascript"></object>
 
     <script src="/Patty-Github/Home/import-navbar.js"></script>
     <script src="/Patty-Github/Code Explanation/code-explanation.js"></script>
@@ -46,7 +49,7 @@
     <script>hljs.highlightAll();</script>
 
     <!--
-        add functionality to dropdown
+        make dropdown function work on ios
         create mobile layout
     -->
 </body>

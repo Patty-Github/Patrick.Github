@@ -35,10 +35,6 @@ object {
     color: white;
 }
 
-#showHtmlButton a:focus {
-    background-color: red;
-}
-
 .dropdownContainer {
     display: flex;
     flex-direction: column;
@@ -153,6 +149,6 @@ pre code.hljs {
     }
 
     .explanationArea {
-        width: 100%;
+        width: calc(100% - 20px);
     }
 }

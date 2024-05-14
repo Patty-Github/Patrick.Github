@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="/Patty-Github/Code Explanation/code-explanation.css">
+</head>
+<div class="bothArea">
+    <div class="codeArea">
+        <div class="codeContainer">
+            <pre class="codePre">
+                <code class="codeCode language-javascript">
+//Dropdown
+const dropdownButtonText = document.querySelector(".dropdownButtonText");////////////////
+const projects = document.querySelectorAll(".project");
+
+projects.forEach((project) => {
+project.addEventListener("click", () => {
+    dropdownButtonText.innerText = project.innerText;
+})
+})
+                </code>
+            </pre>
+        </div>
+    </div>
+    <div class="explanationArea">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quasi illo, doloribus mollitia dignissimos adipisci dolores aliquid alias sunt officiis laudantium delectus perferendis repellendus libero deleniti repellat, sequi tempore? Deserunt.</p>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>

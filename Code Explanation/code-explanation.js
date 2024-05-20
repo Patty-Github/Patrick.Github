@@ -1,4 +1,4 @@
-console.log("Js working");
+console.log("Code-Explanation JS Working");
 
 //Language Selector 
 
@@ -33,6 +33,8 @@ const homeJavascript = document.getElementById("home-javascript");
 
 const blackjackJavascript = document.getElementById("blackjack-javascript");
 
+const tdModelTest = document.getElementById("3d-model-test-javascript")
+
 function showPlaceholderOnLaunch() {
     if(dropdownButtonText.innerHTML = "Select Project") {
         explanationObjects.forEach((explanationObject) => {
@@ -66,6 +68,13 @@ function showSelectedProject() {
                 })
                 blackjackJavascript.style.display = "block";
                 console.log("BlackJack is selected");
+                break;
+            case "3D Model Test":
+                explanationObjects.forEach((explanationObject) => {
+                    explanationObject.style.display = "none";
+                })
+                tdModelTest.style.display = "block";
+                console.log("3D Model Test is selected");
                 break;
         }
     }, 1);

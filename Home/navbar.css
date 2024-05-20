@@ -48,3 +48,94 @@ header {
     background-color: rgb(0, 151, 222);
     cursor: pointer;
 }
+
+.mobileMenuButton {
+    display: none;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media screen and (max-width: 870px) {
+    header {
+        justify-content: center;
+    }
+
+    .navLinks li {
+        display: none;
+    }
+
+    .navButton {
+        display: none;
+    }
+    
+    .mobileMenuContainer {
+        display: flex;
+        justify-content: right;
+    }
+
+    .mobileMenuButton {
+        z-index: 1;
+        position: absolute;
+        display: block;
+        height: 53px;
+        width: 53px;
+        border: none;
+        border-radius: 0;
+        margin: -53px 0 0 0;
+        text-align: center;
+        font-size: 30px;
+        rotate: 90deg;
+        color: white;
+        background-color: transparent;
+        transition: 100ms ease all;
+    }
+
+    .mobileMenuButton:focus {
+        transform: rotate(90deg);
+        margin: -53px 270px 0 0;
+    }
+
+    .mobileMenuButton:focus + .mobileMenu {
+        margin: 0;
+    }
+
+    .mobileNavLink:focus + .mobileMenu {
+        margin: 0;
+    }
+
+    .mobileNavLink a:focus + .mobileMenu {
+        margin: 0;
+    }
+
+    .mobileMenu:focus {
+        margin: 0;
+    }
+
+    .mobileMenu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        margin: -270px;
+        height: 100%;
+        /*width: calc(100% - 53px);*/
+        width: 270px;
+        background-color: rgb(0, 151, 222);
+        transition: 100ms ease all;
+        transition-delay: 000ms;
+    }
+
+    .mobileNavLink {
+        background-color: rgb(0, 151, 222);
+        margin: 5px 0;
+        padding: 10px 0 10px 10px;
+        font-size: 25px;
+    }
+
+    .mobileNavLink a {
+        color: white;
+    }
+}

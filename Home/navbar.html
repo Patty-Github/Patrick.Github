@@ -1,19 +1,39 @@
+<head>
+    <link rel="stylesheet" href="/Patty-Github/Home/navbar.css">
+</head>
 <header>
     <a href="/Patty-Github/index.html" class="navText">Patty-Github</a>
     <nav>
         <ul class="navLinks">
-            <li><a href="/Patty-Github/index.html">Home</a></li>
             <li><a href="/Patty-Github/Coding Projects/coding-projects.html">Code Projects</a></li>
-            <li><a href="/Patty-Github/Coding Explanation/explanation-site.html">Project Explanations</a></li>
-            <li><a href="/Patty-Github/Code Explanation/code-explanation.html">Project Explanations (New)</a></li>
+            <!--<li><a href="/Patty-Github/Coding Explanation/explanation-site.html">Project Explanations</a></li>-->
+            <li><a href="/Patty-Github/Code Explanation/code-explanation.html">Project Explanations</a></li>
             <li><a href="#">3D Models</a></li>
             <li><a href="#">About</a></li>
         </ul>
     </nav>
     <button class="navButton">Contact</button>
-
-    <!--
-        create mobile layout
-        when page is too thin, switch to mobile layout.
-    -->
 </header>
+
+<div class="mobileMenuContainer">
+    <button class="mobileMenuButton" id="mobileMenuButton" onclick="this.focus()">III</button>
+    <div class="mobileMenu">
+        <div class="mobileNavLink"><a href="/Patty-Github/Coding Projects/coding-projects.html">Code Projects</a></div>
+        <div class="mobileNavLink"><a href="/Patty-Github/Code Explanation/code-explanation.html" onmousedown="navigateToHref(event)">Project Explanations</a></div>
+        <div class="mobileNavLink"><a href="#" onmousedown="navigateToHref(event)">3D Models</a></div>
+        <div class="mobileNavLink"><a href="#" onmousedown="navigateToHref(event)">About</a></div>
+        <div class="mobileNavLink"><a href="#" onmousedown="navigateToHref(event)">Contact</a></div>
+    </div>
+</div>
+<script>
+    document.addEventListener('click', (event) => {
+        let target = event.target;
+        if(target !== mobileMenu) {
+            console.log("Clicked off menu");
+            mobileMenu.style.color = "red";
+        } else if(target === mobileMenu) {
+            console.log("Clicked on menu");
+        }
+    })
+</script>
+<script src="/Patty-Github/Home/navbar.js"></script>
